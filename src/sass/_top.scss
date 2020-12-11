@@ -1,0 +1,156 @@
+// $page_width:100%;
+// $box_width:1190px;
+// $box_height:200px;
+// $font12:12px;
+// $font14:14px;
+// $font16:16px;
+// %size {
+//     width: $box_width;
+//     height: $box_height;
+//     background-color: orange;
+//     margin: 0 auto 20px;
+// }
+// 头部
+.top {
+    height: 44px;
+    background: rgba(227, 228, 229, 1);
+}
+
+.t-lists-l li {
+    margin-right: 30px;
+    float: left;
+}
+
+.t-lists-r li {
+    float: right;
+    margin-left: 30px;
+}
+
+.top li a {
+    font-size: 12px;
+    line-height: 44px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.top li a:hover {
+    color: #0088cc;
+}
+
+.t-lists-r li .icon-gouwuche {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.t-lists-r li .t-num {
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    color: #fff;
+    text-align: center;
+    background-color: #ff0000;
+    border-radius: 10px;
+    display: inline-block;
+    line-height: 18px;
+    text-align: center;
+}
+
+// .head {
+//     height: 123px;
+// }
+.hlogo {
+    width: 290px;
+    height: 123px;
+}
+
+.hlogo-pic {
+    width: 290px;
+    height: 77px;
+    cursor: pointer;
+    margin-top: 23px;
+}
+
+.hadv img {
+    width: 270px;
+    height: 106px;
+    margin: 10px 0 0 40px;
+}
+
+.redsearch {
+    width: 280px;
+    height: 46px;
+    line-height: 46px;
+    border: 2px solid rgba(196, 2, 4, 1);
+    margin-top: 43px;
+    border-radius: 25px;
+}
+
+.redsearch input {
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+    border: #fff 0;
+    outline: none;
+}
+
+.redsearch .icon-fangdajing {
+    font-size: 18px;
+    color: rgba(196, 2, 4, 1);
+    margin-left: 20px;
+    line-height: 46px;
+}
+
+.nav {
+    height: 40px;
+    background-color: lightblue;
+}
+
+// 主体
+$box_height:491px;
+.welcome {}
+
+.left-menu {
+    width: 235px;
+    height: $box_height;
+    background-color: lightcoral;
+}
+
+.right-banner {
+    width: 985px;
+    height: $box_height;
+    background-color: lightcyan;
+}
+
+// intro
+.intro {
+    height: 160px;
+    background-color: lightskyblue;
+    margin-bottom: 50px;
+    margin-top: 13px;
+}
+
+.limit {
+    height: 57px;
+    background-color: linen;
+}
+
+.limit-list {
+    // width: 693px;
+    height: 921px;
+    background-color: limegreen;
+}
+
+.picture {
+    height: 182px;
+    background-color: mediumaquamarine;
+}
+
+.bottom {
+    height: 2576px;
+    background-color: mediumspringgreen;
+}
+
+// foot
+.foot {
+    height: 520px;
+}
