@@ -1,0 +1,108 @@
+// limit
+.limit {
+    height: 57px;
+    background-color: linen;
+}
+
+.limit h2 {
+    font-size: 26px;
+    color: 3333;
+    line-height: 30px;
+    width: 116px;
+    padding-bottom: 22px;
+}
+
+.limit-box {
+    // width: 693px;
+    height: 921px;
+    background-color: #fff;
+}
+
+.limit-box li {
+    float: left;
+    margin-right: 14px;
+    background: #f4f4f4;
+    padding: 45px 20px 28px;
+    width: 563px;
+    height: 220px;
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.limit-box li:nth-child(even) {
+    margin-right: 0;
+}
+
+.limit-l {
+    width: 220px;
+    height: 220px;
+}
+
+.limit-l span {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 10px;
+    background: #f71a27;
+    position: absolute;
+    top: 0;
+    left: 80px;
+}
+
+.limit-l img {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.limit-r {
+    width: 297px;
+    cursor: pointer;
+}
+
+.limit-r h2 {
+    font-size: 18px;
+    color: #050000;
+    line-height: 19px;
+    height: 19px;
+    margin-bottom: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.limit-r p {
+    font-size: 14px;
+    color: #ff0000;
+    line-height: 22px;
+    margin-bottom: 30px;
+}
+
+.limit-r .txt {
+    font-size: 14px;
+    color: #da0000;
+    line-height: 28px;
+}
+
+.limit-r .price {
+    font-size: 23px;
+    color: #d70000;
+}
+
+.limit-r .btn {
+    width: 151px;
+    height: 41px;
+    text-align: center;
+    line-height: 41px;
+    background: #dc0000;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.limit-box li:hover img {
+    transform: scale(1.15);
+}

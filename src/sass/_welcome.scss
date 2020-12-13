@@ -1,13 +1,42 @@
-// $box_height:491px;
-// .welcome {
-//     background-color: lightcoral;
-//     overflow: hidden;
-// }
-// .left-menu {
-//     width: 235px;
-//     height: $box_height;
-// }
-// .right-banner {
-//     width: 985px;
-//     height: $box_height;
-// }
+// 主体
+$box_height:491px;
+// .welcome {}
+.left-menu {
+    width: 235px;
+    height: $box_height;
+    background-color: #5e5f62;
+}
+
+.menu-lists {
+    margin: 9px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu-lists li {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 43px;
+    height: 43px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-lists li:hover {
+    background-color: #333;
+}
+
+.menu-lists li a {
+    color: #fff;
+    line-height: 43px;
+    font-size: 16px;
+}
+
+.right-banner {
+    width: 985px;
+    height: $box_height;
+    background-color: lightcyan;
+}

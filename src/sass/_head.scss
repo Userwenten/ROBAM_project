@@ -1,3 +1,45 @@
+// .head
 // .head {
 //     height: 123px;
 // }
+.hlogo {
+    width: 290px;
+    height: 123px;
+}
+
+.hlogo-pic {
+    width: 290px;
+    height: 77px;
+    cursor: pointer;
+    margin-top: 23px;
+}
+
+.hadv img {
+    width: 270px;
+    height: 106px;
+    margin: 10px 0 0 40px;
+}
+
+.redsearch {
+    width: 280px;
+    height: 46px;
+    line-height: 46px;
+    border: 2px solid rgba(196, 2, 4, 1);
+    margin-top: 43px;
+    border-radius: 25px;
+}
+
+.redsearch input {
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+    border: #fff 0;
+    outline: none;
+}
+
+.redsearch .icon-fangdajing {
+    font-size: 18px;
+    color: rgba(196, 2, 4, 1);
+    margin-left: 20px;
+    line-height: 46px;
+}

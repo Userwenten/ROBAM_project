@@ -416,6 +416,14 @@ a {
   background-color: linen;
 }
 
+.limit h2 {
+  font-size: 26px;
+  color: 3333;
+  line-height: 30px;
+  width: 116px;
+  padding-bottom: 22px;
+}
+
 .limit-box {
   height: 921px;
   background-color: #fff;
@@ -521,8 +529,11 @@ a {
 
 .section {
   height: 2500px;
-  padding: 42px 0 44px;
   background-color: #f2f2f2;
+}
+
+.bursting {
+  padding: 42px 0 44px;
 }
 
 .section .section-title {
@@ -546,6 +557,10 @@ a {
   transition: all 0.3s;
 }
 
+.section .more:hover {
+  color: #08c;
+}
+
 .section a:hover .icon-Group- {
   margin-left: 30px;
 }
@@ -558,9 +573,13 @@ a {
   float: left;
   width: 300px;
   text-align: center;
-  margin-right: 7px;
+  margin-right: 6px;
   background: #fff;
   overflow: hidden;
+}
+
+.bur-lists li:nth-child(4) {
+  margin-right: 0px;
 }
 
 .bur-lists li a {
@@ -581,12 +600,12 @@ a {
 .bursting-pic {
   width: 220px;
   display: block;
-  margin: 20px auto;
+  margin: 20px auto 10px;
 }
 
 .bur-says {
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
   background-color: #f71a27;
   width: 0;
   text-align: left;
@@ -628,44 +647,469 @@ a {
   overflow: hidden;
 }
 
-.bur-detial p {
-  font-size: 14px;
-  color: #ff0000;
-  line-height: 44px;
-  height: 44px;
+.bur-detial .cont {
+  font-size: 12px;
+  color: #666;
+  line-height: 26px;
+  height: 26px;
+  filter: alpha(opacity=100);
+  opacity: 1;
 }
 
 .bur-detial .price {
-  display: inline-block;
-  width: 102px;
-  height: 29px;
-  margin: 0 4px;
-  border: 1px solid #e4e4e4;
-  font-size: 12px;
-  color: #808080;
-  background: #fff;
-  line-height: 29px;
-  border-radius: 2px;
+  font-size: 20px;
+  margin-left: 5px;
+  color: #ff0000;
+  line-height: 44px;
 }
 
 .bur-detial .txt {
-  isplay: inline-block;
-  width: 102px;
+  color: #8b8b8c;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.bur-detial .icon-pinzhibaozhang {
+  margin-left: 15px;
+  font-size: 12px;
+  color: orange;
+}
+
+.btns {
+  opacity: 0;
+}
+
+.btns a {
+  display: inline-block;
+  width: 108px;
   height: 29px;
   margin: 0 4px;
-  border: 1px solid #e4e4e4;
   font-size: 12px;
-  color: #808080;
   background: #fff;
   line-height: 29px;
+  border-radius: 2px;
+  transition: color 0.3s;
+}
+
+.infor {
+  color: #808080;
+  border: 1px solid #e4e4e4;
+  position: absolute;
+  left: 25px;
+  bottom: 35px;
+}
+
+.search {
+  color: #ff0000;
+  border: 1px solid #f00;
+  position: absolute;
+  left: 142px;
+  bottom: 66px;
+}
+
+.btns-price {
+  position: absolute;
+  left: 20px;
+  bottom: 140px;
+}
+
+.btns-txt {
+  position: absolute;
+  left: 125px;
+  bottom: 160px;
+}
+
+.bur-lists li:hover .btns {
+  opacity: 1;
+}
+
+.bur-lists li:hover .cont {
+  opacity: 0;
 }
 
 .bur-lists li:hover .bur-says {
   width: 100%;
 }
 
+.recom {
+  font-size: 16px;
+  color: #333;
+  line-height: 32px;
+  float: right;
+  margin-right: 25px;
+  transition: color 0.3s;
+}
+
+.recom:hover {
+  color: #08c;
+}
+
+.salebox {
+  padding-top: 10px;
+}
+
+.salebox-l {
+  position: relative;
+  width: 301px;
+  overflow: hidden;
+}
+
+.salebox-l img {
+  width: 100%;
+  max-height: 507px;
+  transition: transform 0.5s;
+}
+
+.salebox-l:hover img {
+  transform: scale(1.1);
+}
+
+.salebox-l .red {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.con {
+  padding: 22px 20px 24px;
+  width: 250px;
+  height: 46px;
+  background: url(https://img.shoprobam.com/Public/pcnew_xb/img/img50.png) no-repeat center;
+  position: absolute;
+  bottom: 11px;
+  left: 6px;
+}
+
+.con h2 {
+  font-size: 30px;
+  color: #e52d2d;
+  line-height: 46px;
+  float: left;
+  width: 115px;
+}
+
+.con h3 {
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+}
+
+.con p {
+  font-size: 16px;
+  color: #050000;
+  line-height: 24px;
+}
+
+.salebox-r {
+  width: 919px;
+}
+
+.salebox-r li {
+  float: left;
+  margin-left: 8px;
+  width: 414.5px;
+  background: #fff;
+  text-align: center;
+  height: 180px;
+  padding: 39px 20px 32px 17px;
+  position: relative;
+  top: 0;
+}
+
+.bt {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  margin-left: -47px;
+}
+
+.sale-pic {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.sale-pic img {
+  width: 100%;
+}
+
+.con-box {
+  width: 218px;
+  text-align: left;
+  padding-top: 17px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.con-box h2 {
+  font-size: 16px;
+  color: #050000;
+  line-height: 32px;
+  height: 32px;
+}
+
+.con-box p {
+  font-size: 12px;
+  color: #989898;
+  line-height: 22px;
+}
+
+.con-box .price {
+  font-size: 24px;
+  color: #ff0000;
+  line-height: 33px;
+}
+
+.con-box .txt {
+  font-size: 12px;
+  color: #8b8b8c;
+  line-height: 25px;
+}
+
+.con-box .search {
+  width: 111px;
+  height: 30px;
+  background: #dc0000;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  margin-top: 12px;
+  border-radius: 2px;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -48px;
+}
+
+.salebox-r li:hover .search {
+  opacity: 1;
+}
+
+.salebox-r li:hover .con-box {
+  padding-top: 0;
+}
+
+.salebox-r li:nth-child(1) {
+  margin-bottom: 5px;
+}
+
+.salebox-r li:nth-child(2) {
+  margin-bottom: 5px;
+}
+
+.content-lists {
+  margin-top: 18px;
+  border: 1px solid #e5e5e4;
+  background: #fff;
+  display: block;
+  border: 1px solid #ddd;
+}
+
+.content-lists li {
+  width: 303px;
+  float: left;
+  border-right: 1.5px solid #ddd;
+}
+
+.list-top {
+  width: 100%;
+  background: #eee;
+  height: 105px;
+  position: relative;
+}
+
+.list-top span {
+  font-size: 20px;
+  color: #050000;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.list-top-a {
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 40px;
+  left: 75px;
+}
+
+.list-top img {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.list-bot {
+  background-color: #fff;
+  padding: 23px 30px 29px 30px;
+}
+
+.list-bot p {
+  font-size: 12px;
+  line-height: 29px;
+  height: 29px;
+  overflow: hidden;
+}
+
+.content-lists li:hover img {
+  opacity: 1;
+}
+
 .foot {
   height: 520px;
+}
+
+.footer {
+  padding: 43px 0 2px;
+}
+
+.footer1 {
+  padding: 0 59px 40px 23px;
+  border-bottom: 1px solid #f4f4f4;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+}
+
+.footer1-box {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer1-box span {
+  font-size: 36px;
+}
+
+.footer1-box p {
+  display: flex;
+  font-size: 16px;
+  color: #595757;
+  line-height: 27px;
+  margin-top: 17px;
+}
+
+.footer2 {
+  padding: 62px 0;
+  border-top: 1px solid #d4d4d5;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.footer2-list {
+  width: 1000px;
+}
+
+.footer2-list li {
+  float: left;
+}
+
+.footer2-list .li1 {
+  width: 120px;
+}
+
+.footer2-list .li1 h2 {
+  font-size: 14px;
+  color: #323333;
+  font-weight: bold;
+  line-height: 34px;
+  margin-bottom: 13px;
+}
+
+.footer2-list .li1 p {
+  font-size: 12px;
+  color: #7f7f80;
+  line-height: 24px;
+}
+
+.footer2-list .li1 a {
+  color: #7f7f80;
+  transition: color 0.3s;
+}
+
+.footer2-list .li1 a:hover {
+  color: #08c;
+}
+
+.footer-right h2 {
+  font-size: 24px;
+  color: #2688c7;
+  line-height: 29px;
+  font-weight: bold;
+}
+
+.footer-right p {
+  font-size: 12px;
+  color: #4d4d4d;
+  line-height: 21px;
+  margin-bottom: 9px;
+}
+
+.footer-right a {
+  width: 102px;
+  height: 31px;
+  line-height: 31px;
+  padding-left: 19px;
+  font-size: 12px;
+  color: #fff;
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+  background: #2688c7;
+}
+
+.footer-right i {
+  width: 16px;
+  height: 16px;
+  background: url(https://img.shoprobam.com/Public/pcnew_xb/svg/foot07.svg) no-repeat center;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin-right: 15px;
+}
+
+.footer3 {
+  border-top: 1px solid #dfdfdf;
+  padding: 19px 0;
+}
+
+.footer3 a {
+  float: left;
+  color: #717171;
+  font-size: 12px;
+  line-height: 22px;
+  transition: color 0.3s;
+}
+
+.footer3 i {
+  width: 1px;
+  height: 9px;
+  float: left;
+  display: block;
+  background: #717171;
+  margin: 0 12px;
+  margin-top: 7px;
+}
+
+.footer3 p {
+  float: left;
+  color: #717171;
+  font-size: 12px;
+  line-height: 22px;
+  padding: 0 24px 0 28px;
+}
+
+.footer3 .bf {
+  margin-right: 17px;
+}
+
+.footer3 img {
+  width: 47px;
 }
 
 /*# sourceMappingURL=index.css.map */
