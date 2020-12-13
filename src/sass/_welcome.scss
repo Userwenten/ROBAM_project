@@ -35,6 +35,28 @@ $box_height:491px;
     font-size: 16px;
 }
 
+.menu-lists li.active {
+    background-color: #d9d9d9;
+}
+
+.cartlist {
+    position: absolute;
+    left: 300px;
+    // top: 300px;
+    width: 998px;
+    min-height: 468px;
+    border: 1px solid #ff0000;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
+    display: none;
+    transition: top 0.3s ease;
+}
+
+.item {
+    padding: 20px;
+    display: none;
+}
+
 .right-banner {
     width: 985px;
     height: $box_height;

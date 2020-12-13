@@ -365,6 +365,27 @@ a {
   font-size: 16px;
 }
 
+.menu-lists li.active {
+  background-color: #d9d9d9;
+}
+
+.cartlist {
+  position: absolute;
+  left: 300px;
+  width: 998px;
+  min-height: 468px;
+  border: 1px solid #ff0000;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  display: none;
+  transition: top 0.3s ease;
+}
+
+.item {
+  padding: 20px;
+  display: none;
+}
+
 .right-banner {
   width: 985px;
   height: 491px;
@@ -959,6 +980,76 @@ a {
 
 .content-lists li:hover img {
   opacity: 1;
+}
+
+.video {
+  padding-top: 19px;
+}
+
+.video-lists li {
+  float: left;
+  margin-right: 10px;
+  width: 297px;
+}
+
+.video-lists li:nth-last-child(1) {
+  margin-right: 0px;
+}
+
+.video-pic {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-pic img {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.video-pic .open {
+  width: 30px;
+  height: 30px;
+  background: url(https://img.shoprobam.com/Public/pcnew_xb/svg/video.svg) no-repeat center;
+  background-size: 100%;
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+  display: block;
+}
+
+.video-box {
+  padding: 26px 20px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.video-box h2 {
+  font-size: 15px;
+  color: #333;
+  line-height: 29px;
+}
+
+.video-box p {
+  font-size: 12px;
+  color: #717071;
+  line-height: 26px;
+}
+
+.video-lists li:hover h2 {
+  color: #08c;
+}
+
+.video-lists li:hover .open {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+}
+
+.video-lists li:hover img {
+  transform: scale(1.2);
 }
 
 .foot {
