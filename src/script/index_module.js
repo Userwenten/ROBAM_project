@@ -1,4 +1,4 @@
-define([], () => {
+define(['jlazyload'], () => {
     return {
         init: function() {
             // 二级菜单
@@ -100,7 +100,185 @@ define([], () => {
                 }
             }
             lunbotu();
-        }
+            // 双12特惠渲染
+            function limitrender() {
+                const $limitlists = $('.limit-box ul');
+                $.ajax({
+                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    dataType: 'json'
+                }).done(function(data) {
+                    let $strhtml = '';
+                    $.each(data, function(index, value) {
+                        if (index >= 1 && index <= 6) {
+                            $strhtml += `
+                        <li>
+                            <div class="limit-l fl">
+                                <span>1212年终盛典</span>
+                                <a href="">
+                                    <img src="${value.url}" alt="">
+                                </a>
+                            </div>
+                            <div class="limit-r fr">
+                                <h2>${value.title}</h2>
+                                <p>12. 12年终盛典:同价双11! 领券立臧100元!<br> 0.01元购福袋抢iPhone12等10重豪礼!</p>
+                                <span class="txt">特惠价:</span>
+                                <span class="price">￥${value.price}</span>
+                                <div class="btn">立即购买</div>
+                            </div>
+                        </li>
+                        `;
+                        }
+                    });
+                    $limitlists.html($strhtml);
 
+                    //懒加载
+                    $(function() { //页面加载完成
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn" //显示方法：谈入
+                        });
+                    });
+                });
+            }
+            limitrender();
+            // 热销渲染
+            function saleRender() {
+                const $saleLists1 = $('.salebox-r .salebox-r-lists1');
+                $.ajax({
+                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    dataType: 'json'
+                }).done(function(data) {
+                    let $salehtml1 = '';
+                    // console.log('j');
+                    $.each(data, function(index, value) {
+                        if (index >= 7 && index <= 10) {
+                            // console.log('k');
+                            $salehtml1 += `
+                            <li>
+                                <a href="">
+                                    <div class="bt"><span class="bur-event">1212年终盛典</span></div>
+                                    <div class="sale-pic fl">
+                                        <img src="${value.url}" alt="">
+                                    </div>
+                                    <div class="con-box fr">
+                                        <h2>${value.title}</h2>
+                                        <p>27N0H+57B0</p>
+                                        <p>0.01元抢iPhone12等10重豪礼！</p>
+                                        <div class="price">¥${value.price}</div>
+                                        <div class=" txt "><i></i>赠送4599积分</div>
+                                        <span class="search ">咨询有礼</span>
+                                    </div>
+                                </a>
+                            </li>
+                        `;
+                        }
+                    });
+                    $saleLists1.html($salehtml1);
+                    // console.log(1);
+                    // //懒加载
+                    // $(function() { //页面加载完成
+                    //     $("img.lazy").lazyload({
+                    //         effect: "fadeIn" //显示方法：谈入
+                    //     });
+                    // });
+                });
+                const $saleLists2 = $('.salebox-r .salebox-r-lists2');
+                $.ajax({
+                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    dataType: 'json'
+                }).done(function(data) {
+                    // console.log('j');
+                    let $salehtml2 = '';
+                    $.each(data, function(index, value) {
+                        if (index >= 11 && index <= 14) {
+                            // console.log('k');
+                            $salehtml2 += `
+                            <li>
+                                <a href="">
+                                    <div class="bt"><span class="bur-event">1212年终盛典</span></div>
+                                    <div class="sale-pic fl">
+                                        <img src="${value.url}" alt="">
+                                    </div>
+                                    <div class="con-box fr">
+                                        <h2>${value.title}</h2>
+                                        <p>27N0H+57B0</p>
+                                        <p>0.01元抢iPhone12等10重豪礼！</p>
+                                        <div class="price">¥${value.price}</div>
+                                        <div class=" txt "><i></i>赠送4599积分</div>
+                                        <span class="search ">咨询有礼</span>
+                                    </div>
+                                </a>
+                            </li>
+                        `;
+                        }
+                    });
+                    $saleLists2.html($salehtml2);
+                    // console.log(2);
+
+                    // //懒加载
+                    // $(function() { //页面加载完成
+                    //     $("img.lazy").lazyload({
+                    //         effect: "fadeIn" //显示方法：谈入
+                    //     });
+                    // });
+                });
+                const $saleLists3 = $('.salebox-r .salebox-r-lists3');
+                $.ajax({
+                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    dataType: 'json'
+                }).done(function(data) {
+                    let $salehtml1 = '';
+                    $.each(data, function(index, value) {
+                        if (index >= 15 && index <= 18) {
+                            $salehtml1 += `
+                            <li>
+                                <a href="">
+                                    <div class="bt"><span class="bur-event">1212年终盛典</span></div>
+                                    <div class="sale-pic fl">
+                                        <img src="${value.url}" alt="">
+                                    </div>
+                                    <div class="con-box fr">
+                                        <h2>${value.title}</h2>
+                                        <p>27N0H+57B0</p>
+                                        <p>0.01元抢iPhone12等10重豪礼！</p>
+                                        <div class="price">¥${value.price}</div>
+                                        <div class=" txt "><i></i>赠送4599积分</div>
+                                        <span class="search ">咨询有礼</span>
+                                    </div>
+                                </a>
+                            </li>
+                        `;
+                        }
+                    });
+                    $saleLists3.html($salehtml1);
+                    // console.log(3);
+
+                    // //懒加载
+                    // $(function() { //页面加载完成
+                    //     $("img.lazy").lazyload({
+                    //         effect: "fadeIn" //显示方法：谈入
+                    //     });
+                    // });
+                });
+            }
+            saleRender();
+            // tab选项卡----热销爆款
+            function saleTab() {
+                const $titles = $('.recom');
+                const $saleContents = $('.salebox-r ul');
+                let $timer3 = null;
+                $titles.hover(function() {
+                    $(this).addClass('reActive').siblings('.recom').removeClass('reActive');
+                    console.log($(this).index() - 2);
+                    $saleContents.eq($(this).index() - 2).addClass('salebox-r-lists').siblings('ul').removeClass('salebox-r-lists');
+                }, function() {});
+                //     $timer3 = setTimeout(function() { //加延迟
+                //     }, 300);
+                // $titles.on('mouseout', function() {
+                //     clearTimeout($timer3);
+                // });
+            }
+            saleTab();
+
+        }
     }
 });

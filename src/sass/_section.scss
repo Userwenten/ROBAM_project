@@ -225,7 +225,7 @@
     transition: color 0.3s;
 }
 
-.recom:hover {
+.reActive {
     color: #08c;
 }
 
@@ -288,6 +288,20 @@
 
 .salebox-r {
     width: 919px;
+    height: 507px;
+    position: relative;
+}
+
+.salebox-r ul {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.salebox-r .salebox-r-lists {
+    display: block;
 }
 
 .salebox-r li {
@@ -334,6 +348,9 @@
     color: #050000;
     line-height: 32px;
     height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .con-box p {
