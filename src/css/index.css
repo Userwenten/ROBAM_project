@@ -331,6 +331,10 @@ a {
   top: 5px;
 }
 
+.welcome {
+  position: relative;
+}
+
 .left-menu {
   width: 235px;
   height: 491px;
@@ -355,10 +359,6 @@ a {
   cursor: pointer;
 }
 
-.menu-lists li:hover {
-  background-color: #333;
-}
-
 .menu-lists li a {
   color: #fff;
   line-height: 43px;
@@ -366,19 +366,20 @@ a {
 }
 
 .menu-lists li.active {
-  background-color: #d9d9d9;
+  background-color: #333;
 }
 
 .cartlist {
+  z-index: 2;
   position: absolute;
-  left: 300px;
-  width: 998px;
-  min-height: 468px;
-  border: 1px solid #ff0000;
-  background-color: #fff;
+  left: 235px;
+  top: 0px;
+  width: 700px;
+  min-height: 491px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   display: none;
   transition: top 0.3s ease;
+  background-color: #dff;
 }
 
 .item {
@@ -386,10 +387,90 @@ a {
   display: none;
 }
 
+.item-title {
+  font-size: 14px;
+  color: #3e3a39;
+  line-height: 46px;
+}
+
+.item-title a {
+  font-size: 14px;
+  color: #3e3a39;
+  line-height: 46px;
+}
+
+.item-type {
+  font-size: 16px;
+  line-height: 46px;
+}
+
+.item-price span {
+  font-size: 14px;
+  color: #3e3a39;
+  line-height: 46px;
+  margin-right: 20px;
+}
+
 .right-banner {
   width: 985px;
   height: 491px;
   background-color: lightcyan;
+  position: relative;
+}
+
+.right-banner ul li {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.right-banner ol {
+  text-align: right;
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+}
+
+.right-banner ol li {
+  width: 11px;
+  height: 11px;
+  margin: 0 5px 0 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.right-banner ol li.active {
+  background: url(https://img.shoprobam.com/Public/pcnew_xb/svg/banner_h.svg) no-repeat center;
+}
+
+.right-banner a {
+  width: 40px;
+  height: 70px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+}
+
+#left {
+  left: 40px;
+  background: #1a1718 url(https://img.shoprobam.com/Public/pcnew_xb/svg/banner_left.svg) no-repeat center;
+  background-size: 15px auto;
+}
+
+#right {
+  right: 40px;
+  background: #1a1718 url(https://img.shoprobam.com/Public/pcnew_xb/svg/banner_right.svg) no-repeat center;
+  background-size: 15px auto;
+}
+
+.right-banner:hover a {
+  opacity: 1;
 }
 
 .intro {

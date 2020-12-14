@@ -1,12 +1,17 @@
 // 主体
 $box_height:491px;
-// .welcome {}
+.welcome {
+    position: relative;
+}
+
+// 二级菜单
 .left-menu {
     width: 235px;
     height: $box_height;
     background-color: #5e5f62;
 }
 
+// 左边盒子
 .menu-lists {
     margin: 9px 0;
     display: flex;
@@ -25,10 +30,6 @@ $box_height:491px;
     cursor: pointer;
 }
 
-.menu-lists li:hover {
-    background-color: #333;
-}
-
 .menu-lists li a {
     color: #fff;
     line-height: 43px;
@@ -36,20 +37,21 @@ $box_height:491px;
 }
 
 .menu-lists li.active {
-    background-color: #d9d9d9;
+    background-color: #333;
 }
 
+// 右边盒子
 .cartlist {
+    z-index: 2;
     position: absolute;
-    left: 300px;
-    // top: 300px;
-    width: 998px;
-    min-height: 468px;
-    border: 1px solid #ff0000;
-    background-color: #fff;
+    left: 235px;
+    top: 0px;
+    width: 700px;
+    min-height: 491px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
     display: none;
     transition: top 0.3s ease;
+    background-color: #dff;
 }
 
 .item {
@@ -57,8 +59,97 @@ $box_height:491px;
     display: none;
 }
 
+.item-title {
+    font-size: 14px;
+    color: #3e3a39;
+    line-height: 46px;
+}
+
+.item-title a {
+    font-size: 14px;
+    color: #3e3a39;
+    line-height: 46px;
+}
+
+.item-type {
+    font-size: 16px;
+    line-height: 46px;
+}
+
+.item-price span {
+    font-size: 14px;
+    color: #3e3a39;
+    line-height: 46px;
+    margin-right: 20px;
+}
+
+// .item ul {
+//     background-color: papayawhip;
+//     display: flex;
+//     justify-content: space-around;
+// }
+// .item li {
+//     display: flex;
+//     background-color: palegoldenrod;
+// }
 .right-banner {
     width: 985px;
     height: $box_height;
     background-color: lightcyan;
+    position: relative;
+}
+
+.right-banner ul li {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.right-banner ol {
+    text-align: right;
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+}
+
+.right-banner ol li {
+    width: 11px;
+    height: 11px;
+    margin: 0 5px 0 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.right-banner ol li.active {
+    background: url(https://img.shoprobam.com/Public/pcnew_xb/svg/banner_h.svg) no-repeat center;
+}
+
+.right-banner a {
+    width: 40px;
+    height: 70px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+}
+
+#left {
+    left: 40px;
+    background: rgb(26, 23, 24) url(https://img.shoprobam.com/Public/pcnew_xb/svg/banner_left.svg) no-repeat center;
+    background-size: 15px auto;
+}
+
+#right {
+    right: 40px;
+    background: rgb(26, 23, 24) url(https://img.shoprobam.com/Public/pcnew_xb/svg/banner_right.svg) no-repeat center;
+    background-size: 15px auto;
+}
+
+.right-banner:hover a {
+    opacity: 1;
 }
