@@ -1,0 +1,126 @@
+@charset "UTF-8";
+html,
+body {
+    height: 100%;
+    background: #f9f9f9;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 167px;
+    left: 0;
+    right: 0;
+}
+
+main {
+    position: fixed;
+    top: 167px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.login {
+    margin: 50px auto;
+    width: 1002px;
+}
+
+
+/* login-img  */
+
+.login-img {
+    width: 649px;
+    height: 371px;
+}
+
+.login-img img {
+    width: 100%;
+}
+
+
+/* login-txt */
+
+.login-txt {
+    width: 268px;
+    height: 310px;
+    padding: 20px 41px;
+    border: 1px solid #eaeaea;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tab h3 {
+    font-size: 18px;
+    cursor: pointer;
+    color: #999999;
+    text-align: center;
+}
+
+.log-input {
+    position: relative;
+    margin-top: 20px;
+}
+
+.l-input {
+    width: 220px;
+    height: 31px;
+    line-height: 35px;
+    padding-left: 36px;
+}
+
+.icons {
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    font-size: 28px;
+    line-height: 39px;
+    width: 30px;
+    height: 31px;
+    border-right: 1px solid #ccc;
+}
+
+.l-btn1 {
+    width: 89px;
+    height: 35px;
+    position: absolute;
+    border: 0px;
+    right: -5px;
+    border-left: 1px solid #ccc;
+    top: 1px;
+    font-size: 12px;
+    color: #333333;
+    background-color: #EEEEEE;
+    line-height: 33px;
+    text-align: center;
+}
+
+.l-btn {
+    width: 262px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background-color: #118bce;
+}
+
+.login-txt p {
+    margin-top: 20px;
+    color: #999;
+    text-align: center;
+    font-size: 12px;
+}
+
+.login-txt p a {
+    color: #118bce;
+}
+
+.icon-xiaoxi {
+    font-size: 18px;
+    color: green;
+}

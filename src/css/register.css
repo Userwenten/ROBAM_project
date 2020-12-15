@@ -1,0 +1,135 @@
+@charset "UTF-8";
+html,
+body {
+    height: 100%;
+    background: #f9f9f9;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 167px;
+    left: 0;
+    right: 0;
+}
+
+main {
+    position: fixed;
+    top: 167px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.main {
+    margin-top: 50px;
+}
+
+.reg-container {
+    width: 412px;
+    border: 1px solid #eaeaea;
+    padding: 20px 94px 40px;
+    margin: 40px auto;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title h2 {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 20px;
+    color: #333;
+}
+
+.title a {
+    font-size: 12px;
+    line-height: 20px;
+    color: #0088cc;
+}
+
+
+/* reg-input-box */
+
+.reg-input-box {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+}
+
+.reg-input {
+    font-size: 12px;
+    border: 1px solid #c5cddb;
+    /* transition-duration: .3s; */
+    width: 332px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 80px;
+    outline: 0;
+}
+
+.reg-input1 {
+    font-size: 12px;
+    border: 1px solid #c5cddb;
+    width: 175px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 80px;
+    outline: 0;
+}
+
+.icons {
+    border-right: 1px solid #ccc;
+    font-size: 42px;
+    line-height: 50px;
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 50px;
+    height: 41px;
+}
+
+.reg-getnum {
+    display: inline-block;
+    font-size: 12px;
+    border: 1px solid #08c;
+    width: 147px;
+    line-height: 50px;
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.reg-getnum a {
+    color: #0088cc;
+}
+
+
+/* .active {
+    border: solid 1px #08c;
+} */
+
+.reg-input:hover {
+    outline: solid 1px #08c;
+}
+
+.reg-container .reg-input-box1 {
+    justify-content: center;
+    font-size: 18px;
+    background-color: #118bce;
+    line-height: 50px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.reg-container p {
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.reg-container p a {
+    color: #0088cc;
+}

@@ -104,7 +104,7 @@ define(['jlazyload'], () => {
             function limitrender() {
                 const $limitlists = $('.limit-box ul');
                 $.ajax({
-                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     let $strhtml = '';
@@ -144,7 +144,7 @@ define(['jlazyload'], () => {
             function saleRender() {
                 const $saleLists1 = $('.salebox-r .salebox-r-lists1');
                 $.ajax({
-                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     let $salehtml1 = '';
@@ -174,16 +174,16 @@ define(['jlazyload'], () => {
                     });
                     $saleLists1.html($salehtml1);
                     // console.log(1);
-                    // //懒加载
-                    // $(function() { //页面加载完成
-                    //     $("img.lazy").lazyload({
-                    //         effect: "fadeIn" //显示方法：谈入
-                    //     });
-                    // });
+                    //懒加载
+                    $(function() { //页面加载完成
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn" //显示方法：谈入
+                        });
+                    });
                 });
                 const $saleLists2 = $('.salebox-r .salebox-r-lists2');
                 $.ajax({
-                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     // console.log('j');
@@ -214,16 +214,16 @@ define(['jlazyload'], () => {
                     $saleLists2.html($salehtml2);
                     // console.log(2);
 
-                    // //懒加载
-                    // $(function() { //页面加载完成
-                    //     $("img.lazy").lazyload({
-                    //         effect: "fadeIn" //显示方法：谈入
-                    //     });
-                    // });
+                    //懒加载
+                    $(function() { //页面加载完成
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn" //显示方法：谈入
+                        });
+                    });
                 });
                 const $saleLists3 = $('.salebox-r .salebox-r-lists3');
                 $.ajax({
-                    url: 'http://127.0.0.1/dashboard/ROBAM_project/php/listdata.php',
+                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     let $salehtml1 = '';
@@ -252,12 +252,12 @@ define(['jlazyload'], () => {
                     $saleLists3.html($salehtml1);
                     // console.log(3);
 
-                    // //懒加载
-                    // $(function() { //页面加载完成
-                    //     $("img.lazy").lazyload({
-                    //         effect: "fadeIn" //显示方法：谈入
-                    //     });
-                    // });
+                    //懒加载
+                    $(function() { //页面加载完成
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn" //显示方法：谈入
+                        });
+                    });
                 });
             }
             saleRender();
@@ -273,9 +273,7 @@ define(['jlazyload'], () => {
                 }, function() {});
                 //     $timer3 = setTimeout(function() { //加延迟
                 //     }, 300);
-                // $titles.on('mouseout', function() {
                 //     clearTimeout($timer3);
-                // });
             }
             saleTab();
 

@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+/* main */
+
+.navshow {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    background: #F5F5F5;
+}
+
+.inner {}
+
+.inner a {
+    color: #666;
+    margin-right: 5px;
+}
+
+.inner span {
+    color: #666;
+    margin: 0 10px 0 10px;
+}
+
+main {
+    padding: 20px 0 0 0;
+}
+
+
+/* shoppingshow */
+
+.shoppingShow {
+    float: left;
+    width: 500px;
+    position: relative;
+}
+
+.mark {
+    position: absolute;
+    z-index: 9;
+    top: 10px;
+    right: 10px;
+    display: block;
+}
+
+.mark img {
+    width: 92px;
+    border: 0;
+    vertical-align: middle;
+}
+
+.shoppingBig {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: table;
+    z-index: 1;
+    border: 0;
+    border: 1px solid red;
+}
+
+.detailbot {
+    width: 100%;
+    height: 78px;
+    background-image: url(https://img.shoprobam.com/Public/images/goodsxx.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+.txtup {
+    font-size: 26px;
+    font-weight: 600;
+    color: #FFAA6D;
+    line-height: 54px;
+}
+
+.txtdown {
+    color: rgba(255, 255, 255, 1);
+    line-height: 10px;
+    font-size: 16px;
+}
+
+.shoppingBig a {
+    width: 500px;
+    height: 500px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #08c;
+}
+
+.ks-imagezoom-wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.microscope {}
+
+.magnifier {}
+
+.shoppingList {
+    width: 500px;
+    height: 80px;
+    padding: 20px 0 0 0;
+}
+
+.btnLeft {
+    width: 18px;
+    height: 30px;
+    float: left;
+    margin-top: 20px;
+}
+
+.btnRight {
+    width: 18px;
+    height: 30px;
+    float: right;
+    margin-top: 20px;
+}
+
+.shoppingView {
+    width: 430px;
+    height: 82px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    margin-left: 22px;
+}
+
+.outer {
+    width: 688px;
+    left: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.outer li {
+    float: left;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #F0F0F0;
+    margin: 0 4px 0 0;
+}
+
+.shoppingDescription {}
+
+.shoppingDescription h3 {}
+
+.shoppingDescription p a {}
+
+.goods_remark {}
+
+.promotion-price {}
+
+.promotion-price span {}
+
+.promotion-price i {}
+
+.price-txt {}
+
+.price {}
+
+#lastPrice {}

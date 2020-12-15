@@ -249,6 +249,7 @@ a {
 .nav {
   height: 40px;
   background-color: #c40204;
+  position: relative;
 }
 
 .nav-lists li {
@@ -275,17 +276,17 @@ a {
   transform: rotate(0deg);
 }
 
-.nav-allselect {
+.nav ul .nav-allselect {
   height: 0px;
   display: flex;
   justify-content: space-around;
-  position: absolute;
-  top: 207px;
-  left: 50%;
-  margin-left: -610px;
   background-color: #fff;
   transition: all 0.5s;
   z-index: 3;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -610px;
 }
 
 .all .nav-allselect a {
@@ -477,7 +478,7 @@ a {
 .intro {
   height: 160px;
   margin-bottom: 50px;
-  margin-top: 13px;
+  padding-top: 13px;
 }
 
 .intro li {
@@ -516,7 +517,6 @@ a {
 
 .limit {
   height: 57px;
-  background-color: linen;
 }
 
 .limit h2 {

@@ -1,0 +1,187 @@
+/* // 头部 */
+
+@charset "UTF-8";
+.top {
+    height: 44px;
+    background: rgba(227, 228, 229, 1);
+}
+
+.t-lists-l li {
+    margin-right: 30px;
+    float: left;
+}
+
+.t-lists-r li {
+    float: right;
+    margin-left: 30px;
+}
+
+.top li a {
+    font-size: 12px;
+    line-height: 44px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.top li a:hover {
+    color: #0088cc;
+}
+
+.t-lists-r li .icon-gouwuche {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.t-lists-r li .t-num {
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    color: #fff;
+    text-align: center;
+    background-color: #ff0000;
+    border-radius: 10px;
+    display: inline-block;
+    line-height: 18px;
+    text-align: center;
+}
+
+
+/* // .head
+// .head {
+//     height: 123px;
+// } */
+
+.hlogo {
+    width: 290px;
+    height: 123px;
+}
+
+.hlogo-pic {
+    width: 290px;
+    height: 77px;
+    cursor: pointer;
+    margin-top: 23px;
+}
+
+.hadv img {
+    width: 270px;
+    height: 106px;
+    margin: 10px 0 0 40px;
+}
+
+.redsearch {
+    width: 280px;
+    height: 46px;
+    line-height: 46px;
+    border: 2px solid rgba(196, 2, 4, 1);
+    margin-top: 43px;
+    border-radius: 25px;
+}
+
+.redsearch input {
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+    border: #fff 0;
+    outline: none;
+}
+
+.redsearch .icon-fangdajing {
+    font-size: 18px;
+    color: rgba(196, 2, 4, 1);
+    margin-left: 20px;
+    line-height: 46px;
+}
+
+
+/* //nav */
+
+.nav {
+    height: 40px;
+    background-color: rgba(196, 2, 4, 1);
+    position: relative;
+}
+
+.nav-lists li {
+    float: left;
+}
+
+.nav-lists li a {
+    color: #fff;
+    margin-right: 50px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.nav-lists li .icon-xiangshang {
+    margin-left: 5px;
+    padding-top: 2px;
+    font-size: 14px;
+    display: inline-block;
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+
+.nav-lists .all:hover .icon-xiangshang {
+    transform: rotate(0deg);
+}
+
+.nav ul .nav-allselect {
+    height: 0px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    transition: all 0.5s;
+    z-index: 3;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -610px;
+}
+
+.all .nav-allselect a {
+    align-self: center;
+    display: flex;
+    margin-right: 0;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+.nav-allselect img {
+    margin-bottom: 15px;
+    width: 62px;
+    height: 33px;
+}
+
+.nav-allselect p {
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    line-height: 0px;
+    margin-bottom: 10px;
+}
+
+.nav-allselect a:hover p {
+    color: #08c;
+}
+
+.nav-allselect a:hover {
+    margin-top: -10px;
+}
+
+.all:hover .nav-allselect {
+    height: 85px;
+}
+
+.hot-list {
+    position: relative;
+}
+
+
+/* // .nav-lists span {} */
+
+.nav-lists .hot {
+    width: 20px;
+    position: absolute;
+    top: 5px;
+}
