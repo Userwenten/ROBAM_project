@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/foot.css">
     <link rel="stylesheet" href="css/detail.css">
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="detail_module"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="detail_module"></script>
 
 </head>
 
@@ -24,7 +24,7 @@
             <div class="wrap">
                 <ul class="t-lists-l fl">
                     <li>
-                        <a href="#" target="_blank">老板电器品牌官网</a>
+                        <a href="index1.html" target="_blank">老板电器品牌官网</a>
                     </li>
                     <li>
                         <a href="#" target="_blank">购买指南</a>
@@ -44,17 +44,17 @@
                 </ul>
                 <ul class="t-lists-r fr">
                     <li>
-                        <a href="#" target="_blank">我的订单</a>
+                        <a href="carts.html" target="_blank">我的订单</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">注册</a>
+                        <a href="register.html" target="_blank">注册</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">登录</a>
+                        <a href="login.html" target="_blank">登录</a>
                     </li>
                     <li>
                         <span class="iconfont icon-gouwuche"></span>
-                        <a href="#" target="_blank">购物车<span class="t-num">0</span></a>
+                        <a href="carts.html" target="_blank">购物车<span class="t-num">0</span></a>
                     </li>
                     <li>
                         <a href="#" target="_blank">签到送积分</a>
@@ -131,55 +131,59 @@
         <div class="inner wrap">
             <a href="http://10.31.161.125/dashboard/ROBAM_project/src/index1.html">首页</a><span>&gt;</span>
             <a href="">全部商品</a><span>&gt;</span>
-            <a href="#">Robam/老板 27A5+57B0 巨幕拢烟 5.0kW大火力 烟灶套装</a>
+            <a href="#">商品详细 </a>
         </div>
     </div>
     <!-- main -->
-    <form action="#" id="goodsForm" name="goodsForm" method="post">
-        <div class="main">
-            <div class="outer wrap">
-                <div class="shoppingshow clr_fix">
-                    <div class="mark" id="mark">
-                        <img src="" alt="">
-                    </div>
-                    <div class="shoppingBig">
-                        <div class="detailbot">
-                            <div class="txtup">双12返购:积分秒杀50元卷!</div>
-                            <div class="txtdown">换购精品热水器/消毒柜仅需1899元起!</div>
-                        </div>
-                        <a href="">
-                            <span class="ks-imagezoom-wrap" id="ks-imagezoom-wrap">
-                                <img src="" alt="">
-                                <div class="microscope"></div>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="magnifier" style="display: none;"><img src=""></div>
-                    <div class="shoppingList clr_fix">
-                        <div class="btnLeft"><img src="https://img.shoprobam.com/Public/pcnew/img/left.png" alt=""></div>
-                        <div class="shoppingView">
-                            <ul class="outer clr_fix">
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class="btnRight"><img src="https://img.shoprobam.com/Public/pcnew/img/right.png" alt=""></div>
-                    </div>
 
+    <div class="main wrap">
+        <div class="goodsinfo">
+            <div class="wrapper clr">
+                <div id="spic">
+                    <img src="" alt="" id="smallpic">
+                    <div id="sf"></div>
+                    <div class="detailbot">
+                        <div class="txtup">双12返购:积分秒杀50元卷!</div>
+                        <div class="txtdown">换购精品热水器/消毒柜仅需1899元起!</div>
+                    </div>
                 </div>
-                <div class="shoppingDescription">
-                    <h3>Robam/老板 27A5+57B0 巨幕拢烟 5.0kW大火力 烟灶套装</h3>
-                    <p class="goods_remark">①12月狂欢购：12.17日0点抢前10名加赠厨房五件套！<a href="/Products/detail/gid/1949" target="_black">会员专属积分秒杀50元券！</a><br>②前10名好评赠厨房五件套，全网保价全年，不担心买贵！<br> ③换购精品热水器/消毒柜仅需1899元起，详询客服！
-                        <br> ④订单实付满1万元加赠WMF煎盘，满1.5万元加赠西屋破壁机！
-                        <br></p>
-                    <div class="promotion">
-                        <p class="price"></p>
-                        <div class="promotion-price" id="GetLastP"><span class="price-text">预估到手价</span><span class="price" style="font-size:14px; padding-left:5px;"><i>￥</i><label id="lastPrice">4199.00</label></span></div>
-
+                <div id="bf">
+                    <img src="" alt="" id="bpic">
+                </div>
+                <div id="ulist">
+                    <a href="javascript:;" id="left"><img src="https://img.shoprobam.com/Public/pcnew/img/left.png" alt=""></a>
+                    <div id="list">
+                        <ul>
+                            <!-- 渲染放大镜下面的小图 -->
+                        </ul>
                     </div>
+                    <a href="javascript:;" id="right"><img src="https://img.shoprobam.com/Public/pcnew/img/right.png" alt=""></a>
+                </div>
+            </div>
+            <div class="goodsinfo-word">
+                <div class="p-name">
+                    <a class="loadtitle" href="##"></a>
+                </div>
+                <!-- <h3>Robam/老板 27A5+57B0 巨幕拢烟 5.0kW大火力 烟灶套装</h3> -->
+                <p class="goods_remark">①12月狂欢购：12.17日0点抢前10名加赠厨房五件套！<a href="/Products/detail/gid/1949" target="_black">会员专属积分秒杀50元券！</a><br>②前10名好评赠厨房五件套，全网保价全年，不担心买贵！<br> ③换购精品热水器/消毒柜仅需1899元起，详询客服！
+                    <br> ④订单实付满1万元加赠WMF煎盘，满1.5万元加赠西屋破壁机！
+                    <br>
+                </p>
+                <div class="p-price">
+                    <span>惊爆价</span>
+                    <strong><em>￥</em><i class="loadpcp"></i></strong>
+                </div>
+                <div class="p-btn clr_fix">
+                    <span>数量</span>
+                    <input type="text" id="count" value="1" />
+                </div>
+                <div class="p-btn clr_fix">
+                    <a href="javascript:;">加入购物车</a>
+                    <a href="javascript:;">立即购买</a>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- foot -->
     <div class="foot ">

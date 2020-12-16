@@ -2,115 +2,102 @@ define(['jlazyload'], () => {
     return {
         init: function() {
             // 二级菜单
-            function menu() {
-                const $list = $('.menu-lists li');
-                const $cartlist = $('.cartlist');
-                const $item = $('.item');
-                //添加移入效果
-                $list.hover(function() {
-                    $cartlist.show();
-                    $(this).addClass('active').siblings('li').removeClass('active');
-                    //切换内容发生改变，不同的li对应不同的内容块。
-                    $item.eq($(this).index()).show().siblings('.item').hide();
-                }, function() {
-                    $cartlist.hide();
-                });
-                //右侧大盒子移除隐藏
-                $cartlist.hover(function() {
-                    $(this).show();
-                }, function() {
-                    $(this).hide();
-                });
-            }
-            menu();
+            const $list = $('.menu-lists li');
+            const $cartlist = $('.cartlist');
+            const $item = $('.item');
+            //添加移入效果
+            $list.hover(function() {
+                $cartlist.show();
+                $(this).addClass('active').siblings('li').removeClass('active');
+                //切换内容发生改变，不同的li对应不同的内容块。
+                $item.eq($(this).index()).show().siblings('.item').hide();
+            }, function() {
+                $cartlist.hide();
+            });
+            //右侧大盒子移除隐藏
+            $cartlist.hover(function() {
+                $(this).show();
+            }, function() {
+                $(this).hide();
+            });
             // 轮播图
-            function lunbotu() {
-                const $lunbo = $('.right-banner');
-                const $piclist = $('.lunbo ul li');
-                const $btnlist = $('.lunbo ol li');
-                const $left = $('.lunbo #left');
-                const $right = $('.lunbo #right');
-                let $num = 0;
-                let $timer1 = null;
-                let $timer2 = null;
-                //1.小圆圈切换
-                $btnlist.on('mouseover', function() {
-                    $num = $(this).index();
-                    $timer1 = setTimeout(function() {
-                        bannerswitch()
-                    }, 300);
-                });
-                $btnlist.on('mouseout', function() {
-                    clearTimeout($timer1);
-                });
-                //2.左右箭头切换
+            const $lunbo = $('.right-banner');
+            const $piclist = $('.lunbo ul li');
+            const $btnlist = $('.lunbo ol li');
+            const $left = $('.lunbo #left');
+            const $right = $('.lunbo #right');
+            let $num = 0;
+            let $timer1 = null;
+            let $timer2 = null;
+            //1.小圆圈切换
+            $btnlist.on('mouseover', function() {
+                $num = $(this).index();
+                $timer1 = setTimeout(function() {
+                    bannerswitch()
+                }, 300);
+            });
+            $btnlist.on('mouseout', function() {
+                clearTimeout($timer1);
+            });
+            //2.左右箭头切换
+            // console.log($num);
+            // 按右键进行切换
+            $right.on('click', function() {
+                $num++;
                 // console.log($num);
-                // 按右键进行切换
-                $right.on('click', function() {
-                    $num++;
-                    // console.log($num);
-                    if ($num > $btnlist.length - 1) {
-                        $num = 0;
-                    }
-                    bannerswitch();
-                });
-                // 按左键进行切换
-                $left.on('click', function() {
-                    $num--;
-                    // console.log($num);
-                    if ($num < 0) {
-                        $num = $btnlist.length - 1;
-                    }
-                    // console.log($num);
-                    bannerswitch();
-                });
-                //3.自动轮播
-                $timer2 = setInterval(function() {
-                    // $num++;
-                    // if ($num > $btnlist.length - 1) {
-                    //     $num = 0;
-                    // }
-                    // console.log($num);
-                    // bannerswitch();
-                    $right.click();
-                }, 3000);
-
-                //4.鼠标控制定时器停止和开启。
-                // $lunbo.on('mouseover', function() {
-                //     clearInterval($timer2);
-                // });
-                // $lunbo.on('mouseout', function() {
-                //     setInterval($timer2);
-                // });
-                $lunbo.hover(function() {
-                    clearInterval($timer2);
-                }, function() {
-                    $timer2 = setInterval(function() {
-                        $right.click();
-                    }, 3000)
-                });
-                //封装btnlist对应piclist
-                function bannerswitch() {
-                    $btnlist.eq($num).addClass('active').siblings().removeClass('active');
-                    $piclist.eq($num).stop(true).animate({
-                        opacity: 1
-                    }).siblings().stop(true).animate({
-                        opacity: 0
-                    });
+                if ($num > $btnlist.length - 1) {
+                    $num = 0;
                 }
+                bannerswitch();
+            });
+            // 按左键进行切换
+            $left.on('click', function() {
+                $num--;
+                // console.log($num);
+                if ($num < 0) {
+                    $num = $btnlist.length - 1;
+                }
+                // console.log($num);
+                bannerswitch();
+            });
+            //3.自动轮播
+            $timer2 = setInterval(function() {
+                // $num++;
+                // if ($num > $btnlist.length - 1) {
+                //     $num = 0;
+                // }
+                // console.log($num);
+                // bannerswitch();
+                $right.click();
+            }, 3000);
+
+            //4.鼠标控制定时器停止和开启。
+            $lunbo.hover(function() {
+                clearInterval($timer2);
+            }, function() {
+                $timer2 = setInterval(function() {
+                    $right.click();
+                }, 3000)
+            });
+            //封装btnlist对应piclist
+            function bannerswitch() {
+                $btnlist.eq($num).addClass('active').siblings().removeClass('active');
+                $piclist.eq($num).stop(true).animate({
+                    opacity: 1
+                }).siblings().stop(true).animate({
+                    opacity: 0
+                });
             }
-            lunbotu();
             // 双12特惠渲染
-            function limitrender() {
-                const $limitlists = $('.limit-box ul');
-                $.ajax({
-                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
-                    dataType: 'json'
-                }).done(function(data) {
-                    let $strhtml = '';
-                    $.each(data, function(index, value) {
-                        if (index >= 1 && index <= 6) {
-                            $strhtml += `
+            const $limitlists = $('.limit-box ul');
+            $.ajax({
+                url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
+                dataType: 'json'
+            }).done(function(data) {
+                let $strhtml = '';
+                $.each(data, function(index, value) {
+                    if (index >= 1 && index <= 6) {
+                        $strhtml += `
                         <li>
                             <div class="limit-l fl">
                                 <span>1212年终盛典</span>
@@ -127,32 +114,27 @@ define(['jlazyload'], () => {
                             </div>
                         </li>
                         `;
-                        }
-                    });
-                    $limitlists.html($strhtml);
+                    }
+                });
+                $limitlists.html($strhtml);
 
-                    //懒加载
-                    $(function() { //页面加载完成
-                        $("img.lazy").lazyload({
-                            effect: "fadeIn" //显示方法：谈入
-                        });
+                //懒加载
+                $(function() { //页面加载完成
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //显示方法：谈入
                     });
                 });
-            }
-            limitrender();
+            });
             // 热销渲染
-            function saleRender() {
-                const $saleLists1 = $('.salebox-r .salebox-r-lists1');
-                $.ajax({
-                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
-                    dataType: 'json'
-                }).done(function(data) {
-                    let $salehtml1 = '';
-                    // console.log('j');
-                    $.each(data, function(index, value) {
-                        if (index >= 7 && index <= 10) {
-                            // console.log('k');
-                            $salehtml1 += `
+            const $saleLists1 = $('.salebox-r .salebox-r-lists1');
+            $.ajax({
+                url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
+                dataType: 'json'
+            }).done(function(data) {
+                let $salehtml1 = '';
+                $.each(data, function(index, value) {
+                    if (index >= 7 && index <= 10) {
+                        $salehtml1 += `
                             <li>
                                 <a href="">
                                     <div class="bt"><span class="bur-event">1212年终盛典</span></div>
@@ -170,28 +152,25 @@ define(['jlazyload'], () => {
                                 </a>
                             </li>
                         `;
-                        }
-                    });
-                    $saleLists1.html($salehtml1);
-                    // console.log(1);
-                    //懒加载
-                    $(function() { //页面加载完成
-                        $("img.lazy").lazyload({
-                            effect: "fadeIn" //显示方法：谈入
-                        });
+                    }
+                });
+                $saleLists1.html($salehtml1);
+                //懒加载
+                $(function() { //页面加载完成
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //显示方法：谈入
                     });
                 });
-                const $saleLists2 = $('.salebox-r .salebox-r-lists2');
-                $.ajax({
-                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
-                    dataType: 'json'
-                }).done(function(data) {
-                    // console.log('j');
-                    let $salehtml2 = '';
-                    $.each(data, function(index, value) {
-                        if (index >= 11 && index <= 14) {
-                            // console.log('k');
-                            $salehtml2 += `
+            });
+            const $saleLists2 = $('.salebox-r .salebox-r-lists2');
+            $.ajax({
+                url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
+                dataType: 'json'
+            }).done(function(data) {
+                let $salehtml2 = '';
+                $.each(data, function(index, value) {
+                    if (index >= 11 && index <= 14) {
+                        $salehtml2 += `
                             <li>
                                 <a href="">
                                     <div class="bt"><span class="bur-event">1212年终盛典</span></div>
@@ -209,27 +188,25 @@ define(['jlazyload'], () => {
                                 </a>
                             </li>
                         `;
-                        }
-                    });
-                    $saleLists2.html($salehtml2);
-                    // console.log(2);
-
-                    //懒加载
-                    $(function() { //页面加载完成
-                        $("img.lazy").lazyload({
-                            effect: "fadeIn" //显示方法：谈入
-                        });
+                    }
+                });
+                $saleLists2.html($salehtml2);
+                //懒加载
+                $(function() { //页面加载完成
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //显示方法：谈入
                     });
                 });
-                const $saleLists3 = $('.salebox-r .salebox-r-lists3');
-                $.ajax({
-                    url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
-                    dataType: 'json'
-                }).done(function(data) {
-                    let $salehtml1 = '';
-                    $.each(data, function(index, value) {
-                        if (index >= 15 && index <= 18) {
-                            $salehtml1 += `
+            });
+            const $saleLists3 = $('.salebox-r .salebox-r-lists3');
+            $.ajax({
+                url: 'http://10.31.161.125/dashboard/ROBAM_project/php/listdata.php',
+                dataType: 'json'
+            }).done(function(data) {
+                let $salehtml1 = '';
+                $.each(data, function(index, value) {
+                    if (index >= 15 && index <= 18) {
+                        $salehtml1 += `
                             <li>
                                 <a href="">
                                     <div class="bt"><span class="bur-event">1212年终盛典</span></div>
@@ -247,36 +224,25 @@ define(['jlazyload'], () => {
                                 </a>
                             </li>
                         `;
-                        }
-                    });
-                    $saleLists3.html($salehtml1);
-                    // console.log(3);
-
-                    //懒加载
-                    $(function() { //页面加载完成
-                        $("img.lazy").lazyload({
-                            effect: "fadeIn" //显示方法：谈入
-                        });
+                    }
+                });
+                $saleLists3.html($salehtml1);
+                //懒加载
+                $(function() { //页面加载完成
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //显示方法：谈入
                     });
                 });
-            }
-            saleRender();
+            });
             // tab选项卡----热销爆款
-            function saleTab() {
-                const $titles = $('.recom');
-                const $saleContents = $('.salebox-r ul');
-                let $timer3 = null;
-                $titles.hover(function() {
-                    $(this).addClass('reActive').siblings('.recom').removeClass('reActive');
-                    console.log($(this).index() - 2);
-                    $saleContents.eq($(this).index() - 2).addClass('salebox-r-lists').siblings('ul').removeClass('salebox-r-lists');
-                }, function() {});
-                //     $timer3 = setTimeout(function() { //加延迟
-                //     }, 300);
-                //     clearTimeout($timer3);
-            }
-            saleTab();
-
+            const $titles = $('.recom');
+            const $saleContents = $('.salebox-r ul');
+            let $timer3 = null;
+            $titles.hover(function() {
+                $(this).addClass('reActive').siblings('.recom').removeClass('reActive');
+                console.log($(this).index() - 2);
+                $saleContents.eq($(this).index() - 2).addClass('salebox-r-lists').siblings('ul').removeClass('salebox-r-lists');
+            }, function() {});
         }
     }
 });

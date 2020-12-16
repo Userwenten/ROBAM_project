@@ -25,7 +25,7 @@ define(['pagination', 'jlazyload'], function() {
                 $.each(data, function(index, value) {
                     $strhtml += `
                     <li>
-                        <a href="" class="">
+                        <a href="detail.html?sid=${value.sid}" class="">
                             <span class="bur-event">1212年终盛典</span>
                             <img src="${value.url}" alt="" class="bursting-pic">
                             <div class="bur-says">
@@ -35,7 +35,7 @@ define(['pagination', 'jlazyload'], function() {
 
                         </a>
                         <div class="bur-detial">
-                            <a href="">
+                            <a href="detail.html?sid=${value.sid}">
                                 <h2> ${value.title}</h2>
                                 <p class="cont"> 0.01元购福袋抢iPhone12等10重豪礼!
                                 </p>
@@ -44,8 +44,8 @@ define(['pagination', 'jlazyload'], function() {
 
                             </a>
                             <div class="btns">
-                                <a href="" class="infor">查看详情</a>
-                                <a href="" class="search">咨询有礼</a>
+                                <a href="detail.html?sid=${value.sid}" class="infor">查看详情</a>
+                                <a href="detail.html?sid=${value.sid}" class="search">咨询有礼</a>
                                 <a href="" class=" btns-price"> <span class="price">￥${value.price}</span></a>
                                 <a href="" class="btns-txt"><span class="iconfont icon-pinzhibaozhang"></span><span class="txt">赠送4999积分</span></a>
                             </div>
@@ -58,8 +58,13 @@ define(['pagination', 'jlazyload'], function() {
                 $("img.lazy").lazyload({ effect: "fadeIn" });
 
                 //将li元素添加到排序前的数组中。
+                $array_default = [];
+                $array = [];
                 $('.list li').each(function(index, element) { //element:原生的元素对象
                     $array_default[index] = $(this); //排序前
+                    //比如每页长度是15，数组里面有15项
+                    //index:0-14
+                    //如果数据不够15条，只有10条，替换前面的10条，后面还多余了5条
                     $array[index] = $(this); //排序后
                 });
                 // console.log($array_default);
@@ -81,36 +86,38 @@ define(['pagination', 'jlazyload'], function() {
                             dataType: 'json'
                         }).done(function(datalist) {
                             data = datalist.pagedata; //获取接口里面数据
-                            let $strhtml = '';
+                            let $strhtml = ''
                             $.each(data, function(index, value) {
                                 $strhtml += `
-                                <li>
-                                <a href="" class="">
-                                    <span class="bur-event">1212年终盛典</span>
-                                    <img src="${value.url}" alt="" class="bursting-pic">
-                                    <div class="bur-says">
-                                        <p class="bur-says1">大吸力果然效果好</p>
-                                        <p class="bur-says2">来自******4536的用户评价</p>
-                                    </div>
+                                <li> 
+                                    <a href="detail.html?sid=${value.sid}" class="">
+                                        <a href="javascript:;" class="">
+                                            <span class="bur-event">1212年终盛典</span>
+                                            <img src="${value.url}" alt="" class="bursting-pic">
+                                            <div class="bur-says">
+                                                <p class="bur-says1">大吸力果然效果好</p>
+                                                <p class="bur-says2">来自******4536的用户评价</p>
+                                            </div>
 
-                                </a>
-                                <div class="bur-detial">
-                                    <a href="">
-                                        <h2> ${value.title}</h2>
-                                        <p class="cont"> 0.01元购福袋抢iPhone12等10重豪礼!
-                                        </p>
-                                        <span class="price">￥${value.price}</span>
-                                        <span class="iconfont icon-pinzhibaozhang"></span><span class="txt">赠送4999积分</span>
+                                        </a>
+                                        <div class="bur-detial">
+                                            <a href="javascript:;">
+                                                <h2> ${value.title}</h2>
+                                                <p class="cont"> 0.01元购福袋抢iPhone12等10重豪礼!
+                                                </p>
+                                                <span class="price">￥${value.price}</span>
+                                                <span class="iconfont icon-pinzhibaozhang"></span><span class="txt">赠送4999积分</span>
 
+                                            </a>
+                                            <div class="btns">
+                                                <a href="javascript:;" class="infor">查看详情</a>
+                                                <a href="" class="search">咨询有礼</a>
+                                                <a href="" class=" btns-price"> <span class="price">￥${value.price}</span></a>
+                                                <a href="" class="btns-txt"><span class="iconfont icon-pinzhibaozhang"></span><span class="txt">赠送4999积分</span></a>
+                                            </div>
+                                        </div>
                                     </a>
-                                    <div class="btns">
-                                        <a href="" class="infor">查看详情</a>
-                                        <a href="" class="search">咨询有礼</a>
-                                        <a href="" class=" btns-price"> <span class="price">￥${value.price}</span></a>
-                                        <a href="" class="btns-txt"><span class="iconfont icon-pinzhibaozhang"></span><span class="txt">赠送4999积分</span></a>
-                                    </div>
-                                </div>
-                        </li>
+                                 </li>
                                     `;
                             });
                             $list.html($strhtml);
@@ -118,6 +125,8 @@ define(['pagination', 'jlazyload'], function() {
                             $("img.lazy").lazyload({ effect: "fadeIn" });
 
                             //将li元素添加到排序前的数组中。
+                            $array_default = [];
+                            $array = [];
                             $('.list li').each(function(index, element) { //element:原生的元素对象
                                 $array_default[index] = $(this); //排序前
                                 $array[index] = $(this); //排序后
