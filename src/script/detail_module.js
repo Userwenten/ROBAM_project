@@ -134,6 +134,9 @@ define(['jcookie'], () => {
                 if ($.cookie('cookiesid') && $.cookie('cookienum')) {
                     arrsid = $.cookie('cookiesid').split(',');
                     arrnum = $.cookie('cookienum').split(',');
+                } else { //cookie不存在，清空数据
+                    arrsid = []; //存储商品的sid
+                    arrnum = []; //存储商品的数量
                 }
             }
             //上面的函数获取cookie值，并且转换成数组，方便判断是否是第一次。
@@ -154,7 +157,21 @@ define(['jcookie'], () => {
                     arrnum[$index] = parseInt(arrnum[$index]) + parseInt($('#count').val()); //重新赋值
                     $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
                 }
-                alert('按钮被点击了');
+                alert('商品已被添加到购物车');
+            });
+            $('.p-btn #count').on('input', function() {
+                let $reg = /^\d+$/;
+                let $value = $(this).val(); //当前的值
+                console.log(1);
+                if (!$reg.test($value)) { //不是数字
+                    $(this).val(1);
+                }
+                if ($value > 99) {
+                    $(this).val(99);
+                }
+                if ($value <= 0) {
+                    $(this).val(1);
+                }
             });
         }
     }

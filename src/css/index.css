@@ -204,6 +204,13 @@ a {
   text-align: center;
 }
 
+.admin {
+  display: none;
+  font-size: 12px;
+  line-height: 44px;
+  color: #666;
+}
+
 .hlogo {
   width: 290px;
   height: 123px;

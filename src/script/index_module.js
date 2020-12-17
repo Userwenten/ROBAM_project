@@ -243,6 +243,26 @@ define(['jlazyload'], () => {
                 console.log($(this).index() - 2);
                 $saleContents.eq($(this).index() - 2).addClass('salebox-r-lists').siblings('ul').removeClass('salebox-r-lists');
             }, function() {});
+
+
+            //检测是否用户已经登录
+            if (localStorage.getItem('loginname')) {
+                $('.admin').show();
+                $('.login').hide();
+                $('.admin span').html(localStorage.getItem('loginname'));
+            }
+
+            //退出登录 - 删除本地存储
+            $('.admin a').on('click', function() {
+                $('.admin').hide();
+                $('.login').show();
+                localStorage.removeItem('loginname');
+            });
+            //赋值件数给右上角的购物车图标
+            if (localStorage.getItem('goodsnum')) {
+                console.log(1);
+                $('.top .t-num').html(localStorage.getItem('goodsnum'));
+            }
         }
     }
 });

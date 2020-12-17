@@ -1,3 +1,11 @@
+/*
+1.获取cookie - 主要是来自于详情页。
+2.渲染购物车列表。(隐藏一块布局，对隐藏的进行克隆，传值)
+3.计算总价和总的商品件数
+4.全选
+5.改变数量 - 增加减少数量 - cookie有关
+6.删除商品 - cookie有关
+*/
 define(['jcookie'], () => {
     return {
         init: function() {
@@ -12,7 +20,7 @@ define(['jcookie'], () => {
                 }
             }
             getcookietoarray();
-            //2.渲染商品列表
+            //2.渲染商品列表:隐藏一块布局，对隐藏的进行克隆，传值
             function rendergoods(sid, num) { //sid:商品的编号    num:商品的数量
                 //获取所有的接口数据
                 $.ajax({
@@ -35,7 +43,9 @@ define(['jcookie'], () => {
                 });
             }
 
-            //3.计算总价--使用次数很多--函数封装
+            // 3.计算总价和总的商品件数 - 单独计算，不同的地方进行调用。
+            // 核心：可视的visible  选中的
+            // each():jquery遍历元素对象   $.each():遍历数组和对象的
             function calcprice() {
                 let $sum = 0; //商品的件数
                 let $count = 0; //商品的总价
@@ -48,20 +58,24 @@ define(['jcookie'], () => {
                 $('.amount-sum').find('em').html($sum);
                 $('.totalprice').html($count.toFixed(2));
                 // 总件数赋值给顶部
-                $('.top .t-num').html($sum);
-                // console.log($('.top .t-num').html());
+                $('.top .t-num').html($sum); //赋值件数给右上角的购物车图标
+                localStorage.setItem('goodsnum', $sum);
             }
 
-            //4.全选
-            $('.allsel').on('change', function() {
-                $('.goods-item:visible').find(':checkbox').prop('checked', $(this).prop('checked'));
-                $('.allsel').prop('checked', $(this).prop('checked'));
+            //4.全选-事件委托
+            $('.allsel').on('click', function() {
+                $('.goods-item:visible').find(':checkbox').prop('checked', $(this).prop('checked')); //将全选的值给下面的几个input
+                $('.allsel').prop('checked', $(this).prop('checked')); //将自己的值赋值给自己。2个allsel复选框
                 calcprice(); //计算总价
             });
-            let $inputs = $('.goods-item:visible').find(':checkbox');
-            $('.item-list').on('change', $inputs, function() {
+
+            //获取克隆的商品列表里面的checkbox,添加事件
+            //克隆的商品列表里面：选中的复选框的长度等于存在的复选框的长度
+            // let $inputs = $('.goods-item:visible').find(':checkbox'); //查找复选框
+            // $('.item-list').on('click', $inputs, function() {
+            $('.cart-checkbox input').on('click', function() {
                 //$(this):被委托的元素，checkbox
-                if ($('.goods-item:visible').find(':checkbox').length === $('.goods-item:visible').find('input:checked').size()) {
+                if ($('.goods-item:visible').find(':checkbox').length === $('.goods-item:visible').find('input:checked').index) {
                     $('.allsel').prop('checked', true);
                 } else {
                     $('.allsel').prop('checked', false);
@@ -71,13 +85,17 @@ define(['jcookie'], () => {
 
             //5.数量的改变
             $('.quantity-add').on('click', function() {
-                let $num = $(this).parents('.goods-item').find('.quantity-form input').val();
-                $num++;
-                $(this).parents('.goods-item').find('.quantity-form input').val($num);
-
+                //parents():获取当前元素的所有的父级(祖先元素)
+                //parent():获取当前元素的父级
+                let $num = $(this).parents('.goods-item').find('.quantity-form input').val(); //取值
+                $num++; //累加
+                if ($num > 99) { //防止数据过大，Bigint：js新增的数据类型，大整型。
+                    $num = 99;
+                }
+                $(this).parents('.goods-item').find('.quantity-form input').val($num); //赋值
                 $(this).parents('.goods-item').find('.b-sum strong').html(calcsingleprice($(this)));
                 calcprice(); //计算总价
-                setcookie($(this));
+                setcookie($(this)); //数量发生改变，重新存储cookie
             });
 
 
@@ -88,16 +106,20 @@ define(['jcookie'], () => {
                     $num = 1;
                 }
                 $(this).parents('.goods-item').find('.quantity-form input').val($num);
-                $(this).parents('.goods-item').find('.b-sum strong').html(calcsingleprice($(this)));
+                $(this).parents('.goods-item').find('.b-sum strong').html(calcsingleprice($(this))); //计算单个商品的总价，进行赋值
                 calcprice(); //计算总价
                 setcookie($(this));
             });
-
-
             $('.quantity-form input').on('input', function() {
                 let $reg = /^\d+$/g; //只能输入数字
                 let $value = $(this).val();
                 if (!$reg.test($value)) { //不是数字
+                    $(this).val(1);
+                }
+                if ($value > 99) {
+                    $(this).val(99);
+                }
+                if ($value <= 0) {
                     $(this).val(1);
                 }
                 $(this).parents('.goods-item').find('.b-sum strong').html(calcsingleprice($(this)));
@@ -105,13 +127,12 @@ define(['jcookie'], () => {
                 setcookie($(this));
             });
 
-            //计算单价
-            function calcsingleprice(obj) { //obj元素对象
-                let $dj = parseFloat(obj.parents('.goods-item').find('.b-price strong').html());
+            //封装函数实现计算单个商品的总价
+            function calcsingleprice(obj) { //当前调用函数的元素对象，那条列表进行计算
+                let $singleprice = parseFloat(obj.parents('.goods-item').find('.b-price strong').html());
                 let $num = parseInt(obj.parents('.goods-item').find('.quantity-form input').val());
-                return ($dj * $num).toFixed(2)
+                return ($singleprice * $num).toFixed(2); //保留2位小数。
             }
-
 
             //将改变后的数量存放到cookie中
             let arrsid = []; //存储商品的编号。
@@ -132,8 +153,6 @@ define(['jcookie'], () => {
                 arrnum[$.inArray($sid, arrsid)] = obj.parents('.goods-item').find('.quantity-form input').val();
                 $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
             }
-
-
             //6.删除
             function delcookie(sid, arrsid) { //sid:当前删除的sid  arrsid:存放sid的数组[3,5,6,7]
                 let $index = -1; //删除的索引位置

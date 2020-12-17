@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./fonts/iconfont.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/login.css">
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="login_module"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="login_module"></script>
 
 </head>
 
@@ -60,53 +60,54 @@
                 </ul>
             </div>
         </div>
-        <div class="head wrap clr_fix">
-            <div class="hlogo fl">
-                <a href="http://10.31.161.125/dashboard/ROBAM_project/src/index1.html"><img src="https://www.shoprobam.com/Public/images/robam_logo.png" alt="" class="hlogo-pic"></a>
-            </div>
-            <div class="hadv fl">
-                <a href="#"><img src="https://www.shoprobam.com/Public/Uploads/banner5fc609719d277.jpg" alt="" class="hlogo-pic"></a>
-                <a href="#"><img src="https://www.shoprobam.com/Public/Uploads/banner5fb24e8a7c885.jpg" alt="" class="hlogo-pic"></a>
-            </div>
-            <form action="">
-                <div class="redsearch fr">
-                    <span class="iconfont icon-fangdajing"></span>
-                    <input type="text" value="" placeholder="油烟机">
+        <div class="head ">
+            <div class="wrap">
+                <div class="hlogo fl">
+                    <a href="http://10.31.161.125/dashboard/ROBAM_project/src/index1.html"><img src="https://www.shoprobam.com/Public/images/robam_logo.png" alt="" class="hlogo-pic"></a>
                 </div>
-            </form>
+                <div class="hadv fl">
+                    <a href="#"><img src="https://www.shoprobam.com/Public/Uploads/banner5fc609719d277.jpg" alt="" class="hlogo-pic"></a>
+                    <a href="#"><img src="https://www.shoprobam.com/Public/Uploads/banner5fb24e8a7c885.jpg" alt="" class="hlogo-pic"></a>
+                </div>
+                <form action="">
+                    <div class="redsearch fr">
+                        <span class="iconfont icon-fangdajing"></span>
+                        <input type="text" value="" placeholder="油烟机">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
 
     <!-- main -->
     <div class="main">
-        <div class="login  clr_fix">
-            <div class="login-img fl">
-                <a href="" target="_blank"><img src="https://img.shoprobam.com/Public/Uploads/banner5fd8012e9e50b.jpg"></a>
-            </div>
-            <div class="login-txt fl">
-                <div class="tab clr_fix">
-                    <h3>账号登录</h3>
+        <form action="" method="post">
+            <div class="login  clr_fix">
+                <div class="login-img fl">
+                    <a href="" target="_blank"><img src="https://img.shoprobam.com/Public/Uploads/banner5fd8012e9e50b.jpg"></a>
                 </div>
-                <div class="log-input">
-                    <input type="text" class="l-input" name="mobile" id="mobile" placeholder="请输入手机号" pattern="mobile" autocomplete="off">
-                    <span class="iconfont icon-ren111 icons"></span>
-                </div>
-                <div class="loginsms">
+                <div class="login-txt fl">
+                    <div class="tab clr_fix">
+                        <h3>账号登录</h3>
+                    </div>
+                    <div class="log-input">
+                        <input type="text" class="l-input" name="mobile" id="mobile" placeholder="请输入手机号" pattern="mobile">
+                        <span class="iconfont icon-ren111 icons"></span>
+                    </div>
                     <div class="log-input clr_fix">
-                        <input type="text" name="captcha" id="captcha" maxlength="4" class="l-input  fl" autocomplete="off" placeholder="请输入密码" pattern="required">
+                        <input type="password" name="password" id="password" class="l-input  fl" placeholder="请输入密码">
                         <span class="iconfont icon-mima icons"></span>
                     </div>
+                    <p class="tip"><span class="tips"></span></p>
+
+                    <button class="l-btn log-input" value="">登录
+                        </button>
+                    <p>没有老板账号？<a href="register.html">立即免费注册>></a></p>
+                    <p class="fl">快速登录: <a href=""><span class="iconfont icon-xiaoxi"></span></a> </p>
                 </div>
-                <a href="">
-                    <div class="l-btn log-input">登录</div>
-                </a>
-                <p>没有老板账号？<a href="">立即免费注册>></a></p>
-                <p class="fl">快速登录: <a href=""><span class="iconfont icon-xiaoxi"></span></a> </p>
-
             </div>
-        </div>
-
+        </form>
     </div>
 
 </body>

@@ -54,7 +54,7 @@ main {
 /* reg-input-box */
 
 .reg-input-box {
-    margin-top: 20px;
+    margin-top: 5px;
     position: relative;
     display: flex;
 }
@@ -122,6 +122,9 @@ main {
     line-height: 50px;
     color: #FFF;
     cursor: pointer;
+    width: 412px;
+    outline: 0;
+    border: 0;
 }
 
 .reg-container p {
@@ -132,4 +135,11 @@ main {
 
 .reg-container p a {
     color: #0088cc;
+}
+
+.reg-container .tip {
+    line-height: 12px;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 2px;
 }

@@ -13,6 +13,10 @@ header {
     right: 0;
 }
 
+.head {
+    background-color: #FFF;
+}
+
 main {
     position: fixed;
     top: 167px;
@@ -68,9 +72,11 @@ main {
 
 .l-input {
     width: 220px;
-    height: 31px;
+    height: 33px;
     line-height: 35px;
-    padding-left: 36px;
+    padding-left: 40px;
+    outline: 0;
+    border: #11eeee 1px solid;
 }
 
 .icons {
@@ -84,21 +90,6 @@ main {
     border-right: 1px solid #ccc;
 }
 
-.l-btn1 {
-    width: 89px;
-    height: 35px;
-    position: absolute;
-    border: 0px;
-    right: -5px;
-    border-left: 1px solid #ccc;
-    top: 1px;
-    font-size: 12px;
-    color: #333333;
-    background-color: #EEEEEE;
-    line-height: 33px;
-    text-align: center;
-}
-
 .l-btn {
     width: 262px;
     height: 40px;
@@ -107,6 +98,10 @@ main {
     font-size: 18px;
     color: #fff;
     background-color: #118bce;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    /* margin-top: 40px; */
 }
 
 .login-txt p {
@@ -123,4 +118,11 @@ main {
 .icon-xiaoxi {
     font-size: 18px;
     color: green;
+}
+
+.login-txt .tip {
+    line-height: 12px;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 2px;
 }
