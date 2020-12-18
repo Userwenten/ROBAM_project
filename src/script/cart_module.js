@@ -71,9 +71,9 @@ define(['jcookie'], () => {
 
             //获取克隆的商品列表里面的checkbox,添加事件
             //克隆的商品列表里面：选中的复选框的长度等于存在的复选框的长度
-            // let $inputs = $('.goods-item:visible').find(':checkbox'); //查找复选框
-            // $('.item-list').on('click', $inputs, function() {
-            $('.cart-checkbox input').on('click', function() {
+            let $inputs = $('.goods-item:visible').find(':checkbox'); //查找复选框
+            $('.item-list').on('click', $inputs, function() {
+                // $('.cart-checkbox input').on('click', function() {
                 //$(this):被委托的元素，checkbox
                 if ($('.goods-item:visible').find(':checkbox').length === $('.goods-item:visible').find('input:checked').index) {
                     $('.allsel').prop('checked', true);

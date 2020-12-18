@@ -259,7 +259,7 @@ define(['jlazyload'], () => {
                 localStorage.removeItem('loginname');
             });
             //赋值件数给右上角的购物车图标
-            if (localStorage.getItem('goodsnum')) {
+            if (localStorage.getItem('goodsnum') && localStorage.getItem('loginname')) {
                 console.log(1);
                 $('.top .t-num').html(localStorage.getItem('goodsnum'));
             }
